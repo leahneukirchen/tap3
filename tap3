@@ -56,7 +56,7 @@ my $err = gensym;
 my $pid = open3($wtr, $rdr, $err, "/bin/sh", "-c", $cmd);
 
 my $desc = shift || $cmd;
-$desc =~ s/\n.*//;
+$desc =~ s/\n.*//g;
 
 print $wtr $input  if (defined($input));
 close $wtr;
